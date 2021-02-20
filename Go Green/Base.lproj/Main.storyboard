@@ -30,6 +30,9 @@
                                     <segment title="Driver"/>
                                     <segment title="Recycler"/>
                                 </segments>
+                                <connections>
+                                    <action selector="handleSCToggled:" destination="BYZ-38-t0r" eventType="valueChanged" id="eSd-SZ-j6Q"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvd-Rq-jRV">
                                 <rect key="frame" x="103.5" y="160" width="207.5" height="56"/>
@@ -77,6 +80,7 @@
                     <navigationItem key="navigationItem" id="fYd-1q-MmA"/>
                     <connections>
                         <outlet property="emailTextField" destination="LVH-qW-ftl" id="8bp-03-yLp"/>
+                        <outlet property="logoLabel" destination="gvd-Rq-jRV" id="NpN-y0-fNa"/>
                         <outlet property="passwordTextField" destination="BzX-78-EBZ" id="a9e-Wv-BYe"/>
                         <outlet property="signInButton" destination="dYf-0M-F3H" id="W6d-Hk-jXZ"/>
                     </connections>
@@ -92,14 +96,28 @@
                     <view key="view" contentMode="scaleToFill" id="foe-hI-RXO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="INC-Be-G43">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="J0D-Uq-bhd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="INC-Be-G43" secondAttribute="bottom" id="6Jv-1D-pYo"/>
+                            <constraint firstItem="INC-Be-G43" firstAttribute="top" secondItem="foe-hI-RXO" secondAttribute="top" id="NGr-1L-FFf"/>
+                            <constraint firstAttribute="trailing" secondItem="INC-Be-G43" secondAttribute="trailing" id="SwJ-qH-e2W"/>
+                            <constraint firstItem="INC-Be-G43" firstAttribute="leading" secondItem="foe-hI-RXO" secondAttribute="leading" id="kRV-nf-Zey"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DYk-ZB-s5F"/>
+                    <connections>
+                        <outlet property="mapView" destination="INC-Be-G43" id="kue-YD-wG3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKx-Hu-k9X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1751" y="119"/>
+            <point key="canvasLocation" x="1750.7246376811595" y="118.52678571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vTW-Yp-4Ml">
