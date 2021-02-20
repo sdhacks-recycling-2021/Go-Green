@@ -20,6 +20,7 @@
 		447AC94E25E0FDE000B45793 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 447AC94725E0FDE000B45793 /* DMSans-MediumItalic.ttf */; };
 		447AC94F25E0FDE000B45793 /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 447AC94825E0FDE000B45793 /* DMSans-Italic.ttf */; };
 		447AC95325E0FF8000B45793 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447AC95225E0FF8000B45793 /* SignInController.swift */; };
+		448A331425E125DE00A947AB /* RecyclerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448A331325E125DE00A947AB /* RecyclerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		447AC94725E0FDE000B45793 /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
 		447AC94825E0FDE000B45793 /* DMSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Italic.ttf"; sourceTree = "<group>"; };
 		447AC95225E0FF8000B45793 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		448A331325E125DE00A947AB /* RecyclerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				447AC95225E0FF8000B45793 /* SignInController.swift */,
+				448A331325E125DE00A947AB /* RecyclerController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				448A331425E125DE00A947AB /* RecyclerController.swift in Sources */,
 				447AC95325E0FF8000B45793 /* SignInController.swift in Sources */,
 				447AC92C25E0F60700B45793 /* AppDelegate.swift in Sources */,
 				447AC92E25E0F60700B45793 /* SceneDelegate.swift in Sources */,
