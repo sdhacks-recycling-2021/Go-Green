@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q9s-bp-Hoj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9uv-cM-cJH">
-                                <rect key="frame" x="134.5" y="256" width="145" height="32"/>
+                                <rect key="frame" x="134.5" y="218.5" width="145" height="32"/>
                                 <segments>
                                     <segment title="Driver"/>
                                     <segment title="Recycler"/>
@@ -35,18 +35,18 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvd-Rq-jRV">
-                                <rect key="frame" x="103.5" y="160" width="207.5" height="56"/>
+                                <rect key="frame" x="97" y="116" width="220" height="62.5"/>
                                 <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="48"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BzX-78-EBZ">
-                                <rect key="frame" x="157.5" y="373" width="99" height="34"/>
+                                <rect key="frame" x="157.5" y="335.5" width="99" height="34"/>
                                 <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYf-0M-F3H">
-                                <rect key="frame" x="182.5" y="427" width="49" height="31"/>
+                                <rect key="frame" x="181.5" y="389.5" width="51" height="33"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="16"/>
                                 <state key="normal" title="Sign in">
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LVH-qW-ftl">
-                                <rect key="frame" x="173.5" y="319" width="67.5" height="34"/>
+                                <rect key="frame" x="173.5" y="281.5" width="67.5" height="34"/>
                                 <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -79,17 +79,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="fYd-1q-MmA"/>
                     <connections>
+                        <outlet property="driverRecyclerSC" destination="9uv-cM-cJH" id="yRA-WQ-bhe"/>
                         <outlet property="emailTextField" destination="LVH-qW-ftl" id="8bp-03-yLp"/>
                         <outlet property="logoLabel" destination="gvd-Rq-jRV" id="NpN-y0-fNa"/>
                         <outlet property="passwordTextField" destination="BzX-78-EBZ" id="a9e-Wv-BYe"/>
                         <outlet property="signInButton" destination="dYf-0M-F3H" id="W6d-Hk-jXZ"/>
+                        <segue destination="YqC-AA-kGJ" kind="presentation" identifier="handleRecyclerSignInTapped" id="di8-qQ-MUR"/>
+                        <segue destination="hlN-Vm-4B9" kind="presentation" identifier="handleDriverSignInTapped" id="chz-xb-y9x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1031.8840579710145" y="118.52678571428571"/>
         </scene>
-        <!--Recycler Controller-->
+        <!--Recycle-->
         <scene sceneID="PVY-3d-mkY">
             <objects>
                 <viewController storyboardIdentifier="recyclerStoryboard" modalPresentationStyle="fullScreen" id="kX5-tT-qJP" customClass="RecyclerController" customModule="Go_Green" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,45 +101,92 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="INC-Be-G43">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J0D-Uq-bhd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="INC-Be-G43" secondAttribute="bottom" id="6Jv-1D-pYo"/>
-                            <constraint firstItem="INC-Be-G43" firstAttribute="top" secondItem="foe-hI-RXO" secondAttribute="top" id="NGr-1L-FFf"/>
                             <constraint firstAttribute="trailing" secondItem="INC-Be-G43" secondAttribute="trailing" id="SwJ-qH-e2W"/>
+                            <constraint firstItem="INC-Be-G43" firstAttribute="top" secondItem="J0D-Uq-bhd" secondAttribute="top" id="eMJ-gd-oxi"/>
                             <constraint firstItem="INC-Be-G43" firstAttribute="leading" secondItem="foe-hI-RXO" secondAttribute="leading" id="kRV-nf-Zey"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DYk-ZB-s5F"/>
+                    <navigationItem key="navigationItem" title="Recycle" id="DYk-ZB-s5F"/>
                     <connections>
                         <outlet property="mapView" destination="INC-Be-G43" id="kue-YD-wG3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKx-Hu-k9X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750.7246376811595" y="118.52678571428571"/>
+            <point key="canvasLocation" x="2660.8695652173915" y="118.52678571428571"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="vTW-Yp-4Ml">
+        <scene sceneID="vCe-pj-IrV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q9s-bp-Hoj" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="YqC-AA-kGJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kxR-bA-7V7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="RBG-d8-dVj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lru-lC-9Jp"/>
+                        <segue destination="kX5-tT-qJP" kind="relationship" relationship="rootViewController" id="E5w-El-Ugt"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DHt-vk-Fe7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MNl-hU-NNL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121.73913043478262" y="118.52678571428571"/>
+            <point key="canvasLocation" x="1750.7246376811595" y="118.52678571428571"/>
+        </scene>
+        <!--Driver-->
+        <scene sceneID="Uuv-7l-Hbo">
+            <objects>
+                <viewController storyboardIdentifier="driverStoryboard" modalPresentationStyle="fullScreen" id="Gvn-df-Mhp" customClass="DriverController" customModule="Go_Green" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i0m-u4-38H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fY4-wZ-TVW">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M0L-MH-RvB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fY4-wZ-TVW" secondAttribute="bottom" id="HFg-PS-a0c"/>
+                            <constraint firstAttribute="trailing" secondItem="fY4-wZ-TVW" secondAttribute="trailing" id="aa4-uA-kOX"/>
+                            <constraint firstItem="fY4-wZ-TVW" firstAttribute="leading" secondItem="i0m-u4-38H" secondAttribute="leading" id="e9e-6W-JfA"/>
+                            <constraint firstItem="fY4-wZ-TVW" firstAttribute="top" secondItem="M0L-MH-RvB" secondAttribute="top" id="nLi-kQ-cUj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Driver" id="DKM-nd-sqB"/>
+                    <connections>
+                        <outlet property="mapView" destination="fY4-wZ-TVW" id="5vc-b2-kFr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ieT-nG-uJh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2660.8695652173915" y="778.79464285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CHg-K0-zwN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="hlN-Vm-4B9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="IA9-Az-iiJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gvn-df-Mhp" kind="relationship" relationship="rootViewController" id="J9B-Ql-AQp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAo-AS-F4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1750.7246376811595" y="778.79464285714278"/>
         </scene>
     </scenes>
     <resources>

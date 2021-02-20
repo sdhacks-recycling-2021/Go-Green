@@ -12,6 +12,7 @@ class SignInController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet var emailTextField: UITextField!
+    @IBOutlet var driverRecyclerSC: UISegmentedControl!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var logoLabel: UILabel!
@@ -60,10 +61,18 @@ class SignInController: UIViewController {
     
     @IBAction func handleSignInTapped(_ sender: Any) {
         
-        // TODO: - Authentication flow & reclyer/driver logic
+        // TODO: - Authentication flow
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "recyclerStoryboard") as! RecyclerController
-        navigationController?.pushViewController(viewController, animated: true)
+        
+        switch driverRecyclerSC.selectedSegmentIndex {
+        case 0:
+            storyboard.instantiateViewController(identifier: "driverStoryboard")
+            performSegue(withIdentifier: "handleDriverSignInTapped", sender: nil)
+        case 1:
+            storyboard.instantiateViewController(identifier: "recyclerStoryboard")
+            performSegue(withIdentifier: "handleRecyclerSignInTapped", sender: nil)
+        default: break
+        }
     }
 }

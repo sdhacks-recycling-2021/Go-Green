@@ -1,5 +1,5 @@
 //
-//  RecyclerController.swift
+//  DriverController.swift
 //  Go Green
 //
 //  Created by Alan Cao on 2/20/21.
@@ -8,7 +8,7 @@
 import MapKit
 import UIKit
 
-class RecyclerController: UIViewController, CLLocationManagerDelegate {
+class DriverController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
     private let locationManager = CLLocationManager()
@@ -18,7 +18,7 @@ class RecyclerController: UIViewController, CLLocationManagerDelegate {
         searchController.searchBar.placeholder = "Find recycling centers near you"
         return searchController
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
