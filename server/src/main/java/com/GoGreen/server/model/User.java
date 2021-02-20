@@ -12,17 +12,24 @@ public class User
         Associated posts
      */
 
+    private int userID;
     private String username;
     private String password;
     private String location;
     private List<Post> posts;
 
-    public User(String username, String password, String location, List<Post> posts)
+    public User(int userID, String username, String password, String location, List<Post> posts)
     {
+        this.userID = userID;
         this.username = username;
         this.password = password;
         this.location = location;
         this.posts = posts;
+    }
+
+    public int getUserID()
+    {
+        return userID;
     }
 
     public String getUsername()
