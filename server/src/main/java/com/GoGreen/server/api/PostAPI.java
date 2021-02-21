@@ -3,6 +3,9 @@ package com.GoGreen.server.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.GoGreen.server.service.PostService;
+
+import java.util.List;
+
 import com.GoGreen.server.model.Post;
 
 /**
@@ -35,7 +38,7 @@ public class PostAPI
    * @return <List>Post all posts in database
    */
   @GetMapping("/postAPI")
-  public <List>Post all() {
+  public List<Post> all() {
     return service.getAllPosts();
   }
 
@@ -47,6 +50,26 @@ public class PostAPI
   @PostMapping
   public int addPost(@RequestBody Post post) {
     return service.addPost(post);
+  }
+
+  /**
+   * Delete this post
+   * @param post
+   * @return int 0
+   */
+  @DeleteMapping(path = "{id}")
+  public int deletePost(@PathVariable("id") int id) {
+    return service.deletePost(id);
+  }
+
+  /**
+   * Update this post
+   * @param post
+   * @return int 0
+   */
+  @PutMapping(path = "{id}")
+  public int updatePost(@PathVariable("id") int id, Post post) {
+    return service.updatePost(id, post);
   }
 
 }
