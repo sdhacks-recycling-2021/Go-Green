@@ -109,7 +109,7 @@
         <!--Order Information-->
         <scene sceneID="Aa7-mP-tGG">
             <objects>
-                <viewController storyboardIdentifier="orderInformation" modalPresentationStyle="fullScreen" id="H8E-iq-rfj" customClass="OrderInformationController" customModule="Go_Green" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="orderInformation" modalPresentationStyle="fullScreen" id="H8E-iq-rfj" customClass="RecyclerOrderInformationController" customModule="Go_Green" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cpS-kR-sPs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

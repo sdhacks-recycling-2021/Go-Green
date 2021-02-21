@@ -73,8 +73,12 @@ class SignInController: UIViewController {
             storyboard.instantiateViewController(identifier: "driverStoryboard")
             performSegue(withIdentifier: "handleDriverSignInTapped", sender: nil)
         case 1:
-            let viewController = UINavigationController(rootViewController: storyboard.instantiateViewController(identifier: "orderInformation") as! RecyclerOrderInformationController)
-            performSegue(withIdentifier: "handleRecyclerSignInTapped", sender: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(identifier: "orderInformation") as! RecyclerOrderInformationController
+            let navigationController = UINavigationController(rootViewController: viewController)
+            navigationController.modalPresentationStyle = .fullScreen
+            navigationController.navigationBar.prefersLargeTitles = true
+            present(navigationController, animated: true, completion: nil)
         default: break
         }
     }
