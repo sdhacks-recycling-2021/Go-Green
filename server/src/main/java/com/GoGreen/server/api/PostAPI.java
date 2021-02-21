@@ -1,5 +1,6 @@
 package com.GoGreen.server.api;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.GoGreen.server.service.PostService;
 import com.GoGreen.server.model.Post;
@@ -13,12 +14,19 @@ public class PostAPI
 {
 
   private PostService service;
+
+  @Autowired
+  public PostAPI (PostService service)
+  {
+    this.service = service;
+  }
+
   /**
    * Retrieve location variable of a post
    * @return String - the location of the post
    */
   @GetMapping(path = "{id}")
-  public String getLocation(int id) {
+  public String getLocation(@PathVariable("id") int id) {
     return service.selectPost(id).getLocation();
   }
 
@@ -28,10 +36,8 @@ public class PostAPI
    * @return
    */
   @PostMapping
-  public boolean addPost(@RequestBody Post post) {
-    service.addPost(post);
-    return true;
+  public int addPost(@RequestBody Post post) {
+    return service.addPost(post);
   }
 
-  private 
 }

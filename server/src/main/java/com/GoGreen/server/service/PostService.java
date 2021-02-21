@@ -26,8 +26,7 @@ public class PostService
 
     public int addPost(Post post)
     {
-        postDao.createPost(post);
-        return 0;
+        return postDao.createPost(post);
     }
 
     public Post selectPost(int postID)

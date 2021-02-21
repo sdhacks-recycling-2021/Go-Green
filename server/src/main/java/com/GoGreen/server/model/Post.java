@@ -1,5 +1,7 @@
 package com.GoGreen.server.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Post
 {
     /*
@@ -15,11 +17,13 @@ public class Post
     private long datePosted;    //Time will be milis since epoch
     private String location;
 
-    public Post(int postID, String username, long datePosted, String location)
+    public Post(@JsonProperty("id") int postID,
+                @JsonProperty("username") String username,
+                @JsonProperty("location") String location)
     {
         this.postID = postID;
         this.username = username;
-        this.datePosted = datePosted;
+        this.datePosted = System.currentTimeMillis();
         this.location = location;
     }
 
