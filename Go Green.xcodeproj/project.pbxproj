@@ -23,6 +23,9 @@
 		448A331425E125DE00A947AB /* RecyclerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448A331325E125DE00A947AB /* RecyclerController.swift */; };
 		44C7D60F25E1D63D007D9BF6 /* DriverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D60E25E1D63D007D9BF6 /* DriverController.swift */; };
 		44C7D61225E2418A007D9BF6 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D61125E2418A007D9BF6 /* SignUpController.swift */; };
+		44C7D61725E24839007D9BF6 /* OrderInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D61625E24839007D9BF6 /* OrderInformationController.swift */; };
+		44C7D61A25E25793007D9BF6 /* OrderCheckoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D61925E25793007D9BF6 /* OrderCheckoutController.swift */; };
+		44C7D61D25E25FB0007D9BF6 /* SuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D61C25E25FB0007D9BF6 /* SuccessController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		448A331325E125DE00A947AB /* RecyclerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclerController.swift; sourceTree = "<group>"; };
 		44C7D60E25E1D63D007D9BF6 /* DriverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverController.swift; sourceTree = "<group>"; };
 		44C7D61125E2418A007D9BF6 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		44C7D61625E24839007D9BF6 /* OrderInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInformationController.swift; sourceTree = "<group>"; };
+		44C7D61925E25793007D9BF6 /* OrderCheckoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckoutController.swift; sourceTree = "<group>"; };
+		44C7D61C25E25FB0007D9BF6 /* SuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +120,31 @@
 		447AC95525E1044D00B45793 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				447AC95225E0FF8000B45793 /* SignInController.swift */,
-				44C7D61125E2418A007D9BF6 /* SignUpController.swift */,
-				448A331325E125DE00A947AB /* RecyclerController.swift */,
+				44C7D62025E26324007D9BF6 /* Authentication */,
+				44C7D61F25E2631F007D9BF6 /* Recycler */,
 				44C7D60E25E1D63D007D9BF6 /* DriverController.swift */,
+				44C7D61C25E25FB0007D9BF6 /* SuccessController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		44C7D61F25E2631F007D9BF6 /* Recycler */ = {
+			isa = PBXGroup;
+			children = (
+				448A331325E125DE00A947AB /* RecyclerController.swift */,
+				44C7D61625E24839007D9BF6 /* OrderInformationController.swift */,
+				44C7D61925E25793007D9BF6 /* OrderCheckoutController.swift */,
+			);
+			path = Recycler;
+			sourceTree = "<group>";
+		};
+		44C7D62025E26324007D9BF6 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				447AC95225E0FF8000B45793 /* SignInController.swift */,
+				44C7D61125E2418A007D9BF6 /* SignUpController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,9 +226,12 @@
 			files = (
 				448A331425E125DE00A947AB /* RecyclerController.swift in Sources */,
 				44C7D60F25E1D63D007D9BF6 /* DriverController.swift in Sources */,
+				44C7D61725E24839007D9BF6 /* OrderInformationController.swift in Sources */,
+				44C7D61D25E25FB0007D9BF6 /* SuccessController.swift in Sources */,
 				447AC95325E0FF8000B45793 /* SignInController.swift in Sources */,
 				447AC92C25E0F60700B45793 /* AppDelegate.swift in Sources */,
 				447AC92E25E0F60700B45793 /* SceneDelegate.swift in Sources */,
+				44C7D61A25E25793007D9BF6 /* OrderCheckoutController.swift in Sources */,
 				44C7D61225E2418A007D9BF6 /* SignUpController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

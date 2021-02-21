@@ -74,6 +74,11 @@ class RecyclerController: UIViewController, CLLocationManagerDelegate {
     }
     
     @objc func handlePlaceOrderTapped() {
-        // TODO: - Place order screen
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "orderInformation") as! OrderInformationController
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.navigationBar.prefersLargeTitles = true
+        present(navigationController, animated: true, completion: nil)
     }
 }
