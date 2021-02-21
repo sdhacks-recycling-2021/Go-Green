@@ -1,8 +1,12 @@
 package com.GoGreen.server.model;
 
-import java.util.List;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import java.util.Set;
 
-public class User
+@Entity
+@Table (name = "users")
+public class User extends BaseEntity
 {
     /*
         Insert all data for any particular user
@@ -12,25 +16,27 @@ public class User
         Associated posts
      */
 
-    private int userID;
+    @Column(name = "username")
+    @NotEmpty
     private String username;
+
+    @Column(name = "password")
+    @NotEmpty
     private String password;
+
+    @Column (name = "location")
     private String location;
-    private List<Post> posts;
 
-    public User(int userID, String username, String password, String location, List<Post> posts)
-    {
-        this.userID = userID;
-        this.username = username;
-        this.password = password;
-        this.location = location;
-        this.posts = posts;
-    }
+//    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    private Set<Post> posts;
 
-    public int getUserID()
-    {
-        return userID;
-    }
+//    public User(String username, String password, String location, Set<Post> posts)
+//    {
+//        this.username = username;
+//        this.password = password;
+//        this.location = location;
+//        this.posts = posts;
+//    }
 
     public String getUsername()
     {
@@ -47,8 +53,8 @@ public class User
         return location;
     }
 
-    public List<Post> getPosts()
-    {
-        return posts;
-    }
+//    public Set<Post> getPosts()
+//    {
+//        return posts;
+//    }
 }

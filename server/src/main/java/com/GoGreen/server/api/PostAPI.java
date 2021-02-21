@@ -37,13 +37,13 @@ public class PostAPI
    * Print all posts in database
    * @return <List>Post all posts in database
    */
-  @GetMapping("/postAPI")
+  @GetMapping
   public List<Post> all() {
     return service.getAllPosts();
   }
 
   /**
-   * Add post to 
+   * Add post to
    * @param post
    * @return
    */
@@ -68,7 +68,7 @@ public class PostAPI
    * @return int 0
    */
   @PutMapping(path = "{id}")
-  public int updatePost(@PathVariable("id") int id, Post post) {
+  public int updatePost(@PathVariable("id") int id, @RequestBody Post post) {
     return service.updatePost(id, post);
   }
 

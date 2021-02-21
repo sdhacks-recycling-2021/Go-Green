@@ -1,8 +1,13 @@
 package com.GoGreen.server.model;
 
+import com.GoGreen.server.dao.UserDaoLocalRepo;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
-public class Post
+@Entity
+@Table(name = "posts")
+public class Post extends BaseEntity
 {
     /*
         Insert all properties of any particular post
@@ -12,29 +17,32 @@ public class Post
         Picture (might exclude if short on time)
      */
 
-    private int postID;
-    private String username;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User postingUser;
+
+    @Column(name = "date_posted")
+    @NotEmpty
     private long datePosted;    //Time will be milis since epoch
+
+    @Column(name = "location")
+    @NotEmpty
     private String location;
 
-    public Post(@JsonProperty("id") int postID,
-                @JsonProperty("username") String username,
-                @JsonProperty("location") String location)
-    {
-        this.postID = postID;
-        this.username = username;
-        this.datePosted = System.currentTimeMillis();
-        this.location = location;
-    }
+//    public Post(@JsonProperty("userID") int userID,
+//                @JsonProperty("location") String location)
+//    {
+//        this.datePosted = System.currentTimeMillis();
+//        this.location = location;
+//
+//        //very hacky solution to converting user id to a database call
+//        UserDaoLocalRepo hackRepo = new UserDaoLocalRepo();
+//        hackRepo.getUserByID(userID);
+//    }
 
-    public int getPostID()
+    public User getPostingUser()
     {
-        return postID;
-    }
-
-    public String getUsername()
-    {
-        return username;
+        return postingUser;
     }
 
     public long getDatePosted()
@@ -45,5 +53,10 @@ public class Post
     public String getLocation()
     {
         return location;
+    }
+
+    public int getPostID()
+    {
+        return super.getId();
     }
 }
