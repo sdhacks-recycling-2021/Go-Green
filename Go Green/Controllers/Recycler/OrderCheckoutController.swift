@@ -48,6 +48,7 @@ class OrderCheckoutController: UIViewController {
     @IBAction func handlePlaceTicketTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: "success") as! SuccessController
+        viewController.successMessage = "Congratulations! Your order has been placed and a driver will arrive shortly."
         present(viewController, animated: true) {
             Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.timerFired), userInfo: nil, repeats: false)
         }
@@ -55,7 +56,7 @@ class OrderCheckoutController: UIViewController {
     
     @objc func timerFired() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "recyclerStoryboard") as! RecyclerController
+        let viewController = storyboard.instantiateViewController(identifier: "orderInformation") as! RecyclerOrderInformationController
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.navigationBar.prefersLargeTitles = true

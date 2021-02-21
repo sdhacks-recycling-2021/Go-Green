@@ -20,12 +20,13 @@
 		447AC94E25E0FDE000B45793 /* DMSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 447AC94725E0FDE000B45793 /* DMSans-MediumItalic.ttf */; };
 		447AC94F25E0FDE000B45793 /* DMSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 447AC94825E0FDE000B45793 /* DMSans-Italic.ttf */; };
 		447AC95325E0FF8000B45793 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447AC95225E0FF8000B45793 /* SignInController.swift */; };
-		448A331425E125DE00A947AB /* RecyclerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448A331325E125DE00A947AB /* RecyclerController.swift */; };
 		44C7D60F25E1D63D007D9BF6 /* DriverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D60E25E1D63D007D9BF6 /* DriverController.swift */; };
 		44C7D61225E2418A007D9BF6 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D61125E2418A007D9BF6 /* SignUpController.swift */; };
-		44C7D61725E24839007D9BF6 /* OrderInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D61625E24839007D9BF6 /* OrderInformationController.swift */; };
+		44C7D61725E24839007D9BF6 /* RecyclerOrderInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D61625E24839007D9BF6 /* RecyclerOrderInformationController.swift */; };
 		44C7D61A25E25793007D9BF6 /* OrderCheckoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D61925E25793007D9BF6 /* OrderCheckoutController.swift */; };
 		44C7D61D25E25FB0007D9BF6 /* SuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D61C25E25FB0007D9BF6 /* SuccessController.swift */; };
+		44C7D62525E26828007D9BF6 /* RecyclerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D62425E26828007D9BF6 /* RecyclerCell.swift */; };
+		44C7D62925E26BFC007D9BF6 /* DriverOrderInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C7D62825E26BFC007D9BF6 /* DriverOrderInformationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,12 +45,13 @@
 		447AC94725E0FDE000B45793 /* DMSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-MediumItalic.ttf"; sourceTree = "<group>"; };
 		447AC94825E0FDE000B45793 /* DMSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Italic.ttf"; sourceTree = "<group>"; };
 		447AC95225E0FF8000B45793 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
-		448A331325E125DE00A947AB /* RecyclerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclerController.swift; sourceTree = "<group>"; };
 		44C7D60E25E1D63D007D9BF6 /* DriverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverController.swift; sourceTree = "<group>"; };
 		44C7D61125E2418A007D9BF6 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
-		44C7D61625E24839007D9BF6 /* OrderInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInformationController.swift; sourceTree = "<group>"; };
+		44C7D61625E24839007D9BF6 /* RecyclerOrderInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclerOrderInformationController.swift; sourceTree = "<group>"; };
 		44C7D61925E25793007D9BF6 /* OrderCheckoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCheckoutController.swift; sourceTree = "<group>"; };
 		44C7D61C25E25FB0007D9BF6 /* SuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessController.swift; sourceTree = "<group>"; };
+		44C7D62425E26828007D9BF6 /* RecyclerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclerCell.swift; sourceTree = "<group>"; };
+		44C7D62825E26BFC007D9BF6 /* DriverOrderInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverOrderInformationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		447AC92A25E0F60700B45793 /* Go Green */ = {
 			isa = PBXGroup;
 			children = (
+				44C7D62325E26819007D9BF6 /* Cells */,
 				447AC95525E1044D00B45793 /* Controllers */,
 				447AC94025E0FDA900B45793 /* Fonts */,
 				447AC92B25E0F60700B45793 /* AppDelegate.swift */,
@@ -124,6 +127,7 @@
 				44C7D61F25E2631F007D9BF6 /* Recycler */,
 				44C7D60E25E1D63D007D9BF6 /* DriverController.swift */,
 				44C7D61C25E25FB0007D9BF6 /* SuccessController.swift */,
+				44C7D62825E26BFC007D9BF6 /* DriverOrderInformationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -131,8 +135,7 @@
 		44C7D61F25E2631F007D9BF6 /* Recycler */ = {
 			isa = PBXGroup;
 			children = (
-				448A331325E125DE00A947AB /* RecyclerController.swift */,
-				44C7D61625E24839007D9BF6 /* OrderInformationController.swift */,
+				44C7D61625E24839007D9BF6 /* RecyclerOrderInformationController.swift */,
 				44C7D61925E25793007D9BF6 /* OrderCheckoutController.swift */,
 			);
 			path = Recycler;
@@ -145,6 +148,14 @@
 				44C7D61125E2418A007D9BF6 /* SignUpController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		44C7D62325E26819007D9BF6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				44C7D62425E26828007D9BF6 /* RecyclerCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +235,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				448A331425E125DE00A947AB /* RecyclerController.swift in Sources */,
 				44C7D60F25E1D63D007D9BF6 /* DriverController.swift in Sources */,
-				44C7D61725E24839007D9BF6 /* OrderInformationController.swift in Sources */,
+				44C7D61725E24839007D9BF6 /* RecyclerOrderInformationController.swift in Sources */,
+				44C7D62525E26828007D9BF6 /* RecyclerCell.swift in Sources */,
+				44C7D62925E26BFC007D9BF6 /* DriverOrderInformationController.swift in Sources */,
 				44C7D61D25E25FB0007D9BF6 /* SuccessController.swift in Sources */,
 				447AC95325E0FF8000B45793 /* SignInController.swift in Sources */,
 				447AC92C25E0F60700B45793 /* AppDelegate.swift in Sources */,

@@ -73,13 +73,9 @@ class SignInController: UIViewController {
             storyboard.instantiateViewController(identifier: "driverStoryboard")
             performSegue(withIdentifier: "handleDriverSignInTapped", sender: nil)
         case 1:
-            storyboard.instantiateViewController(identifier: "recyclerStoryboard")
+            let viewController = UINavigationController(rootViewController: storyboard.instantiateViewController(identifier: "orderInformation") as! RecyclerOrderInformationController)
             performSegue(withIdentifier: "handleRecyclerSignInTapped", sender: nil)
         default: break
         }
-    }
-    
-    @IBAction func handleSignUpTapped(_ sender: Any) {
-        // TODO: - Present sign up screen
     }
 }
