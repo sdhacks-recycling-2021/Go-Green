@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS go_green;
+
+ALTER DATABASE go_green
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+GRANT ALL PRIVILEGES ON go_green.* TO 'user'@'%' IDENTIFIED BY 'password';
