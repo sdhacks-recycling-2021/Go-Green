@@ -24,8 +24,14 @@ public class User extends BaseEntity
     @NotEmpty
     private String password;
 
+    @Column
+    private String email;
+
     @Column (name = "location")
     private String location;
+
+    @Column (name = "user_type")
+    private String userType;
 
 //    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //    private Set<Post> posts;
@@ -52,6 +58,34 @@ public class User extends BaseEntity
     {
         return location;
     }
+
+    public String getEmail() {return email;}
+
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
+    public void setLocation(String location)
+    {
+        this.location = location;
+    }
+
+    public void setUserType(String userType)
+    {
+        this.userType = userType;
+    }
+
 
 //    public Set<Post> getPosts()
 //    {

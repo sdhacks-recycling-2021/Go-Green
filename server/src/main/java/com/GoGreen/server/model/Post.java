@@ -1,7 +1,5 @@
 package com.GoGreen.server.model;
 
-import com.GoGreen.server.dao.UserDaoLocalRepo;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
@@ -35,9 +33,6 @@ public class Post extends BaseEntity
 //        this.datePosted = System.currentTimeMillis();
 //        this.location = location;
 //
-//        //very hacky solution to converting user id to a database call
-//        UserDaoLocalRepo hackRepo = new UserDaoLocalRepo();
-//        hackRepo.getUserByID(userID);
 //    }
 
     public User getPostingUser()

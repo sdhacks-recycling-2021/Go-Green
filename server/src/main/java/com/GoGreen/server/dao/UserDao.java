@@ -1,14 +1,13 @@
 package com.GoGreen.server.dao;
 
 import com.GoGreen.server.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface UserDao
+@Repository
+public interface UserDao extends JpaRepository<User, Integer>
 {
-    List<User> getUsers();
-    int createUser(User user);
-    User getUserByID(int userID);
-    int deleteUserByID(int userID);
-    int updateUserByID(int userID);
+
 }
