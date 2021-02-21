@@ -1,5 +1,5 @@
 //
-//  OrderInformationController.swift
+//  RecyclerOrderInformationController.swift
 //  Go Green
 //
 //  Created by Alan Cao on 2/20/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OrderInformationController: UIViewController {
+class RecyclerOrderInformationController: UIViewController {
 
     @IBOutlet var totalLabel: UILabel!
     @IBOutlet var checkoutButton: UIButton!

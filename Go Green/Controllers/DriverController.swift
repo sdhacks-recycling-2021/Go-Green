@@ -9,50 +9,48 @@ import MapKit
 import UIKit
 
 class DriverController: UIViewController {
-
-    @IBOutlet var mapView: MKMapView!
-    private let locationManager = CLLocationManager()
     
-    private let searchController: UISearchController = {
-        let searchController = UISearchController()
-        searchController.searchBar.placeholder = "Find recycling centers near you"
-        return searchController
-    }()
-
+    @IBOutlet var tableView: UITableView!
+    var names: [String] = ["Mary C.", "Anthony W.", "Chris B.", "John R.", "Jason K."]
+    var distances: [Double] = [0.4, 0.8, 1.5, 1.8, 2.2]
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        enableLocationServices()
-        configureUI()
         
+        configureTableView()
     }
+    
+    func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = 64
+    }
+}
 
-    func configureUI() {
-        configureMapView()
+extension DriverController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return names.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let name = names[indexPath.row]
+        let distance = distances[indexPath.row]
         
-        navigationItem.searchController = searchController
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recyclerCell") as! RecyclerCell
+        cell.nameLabel.text = name
+        cell.distanceLabel.text = "\(String(format: "%.1f", distance)) mi."
+        return cell
     }
     
-    func configureMapView() {
-        mapView.showsUserLocation = true
-        mapView.userTrackingMode = .follow
-    }
-    
-    func enableLocationServices() {
-        switch CLLocationManager.authorizationStatus(){
-        case .notDetermined: locationManager.requestWhenInUseAuthorization()
-        case .restricted, .denied: break
-        case .authorizedAlways:
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
-        case .authorizedWhenInUse: locationManager.requestAlwaysAuthorization()
-        @unknown default: break
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let viewController = storyboard?.instantiateViewController(identifier: "driverOrderInformation") as? DriverOrderInformationController {
+            let distance = distances[indexPath.row]
+            let name = names[indexPath.row]
+            
+            viewController.name = name
+            viewController.distance = distance
+            navigationController?.pushViewController(viewController, animated: true)
         }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            locationManager.requestAlwaysAuthorization()
-        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
