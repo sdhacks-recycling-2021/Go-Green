@@ -19,6 +19,19 @@ class RecyclerController: UIViewController, CLLocationManagerDelegate {
         return searchController
     }()
     
+    private let placeOrderButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("+", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(equalToConstant: 48).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        button.layer.cornerRadius = 48 / 2
+        button.backgroundColor = .systemGreen
+        button.addTarget(self, action: #selector(handlePlaceOrderTapped), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +44,10 @@ class RecyclerController: UIViewController, CLLocationManagerDelegate {
         configureMapView()
         
         navigationItem.searchController = searchController
+        
+        view.addSubview(placeOrderButton)
+        placeOrderButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16).isActive = true
+        placeOrderButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
     }
     
     func configureMapView() {
@@ -54,5 +71,9 @@ class RecyclerController: UIViewController, CLLocationManagerDelegate {
         if status == .authorizedWhenInUse {
             locationManager.requestAlwaysAuthorization()
         }
+    }
+    
+    @objc func handlePlaceOrderTapped() {
+        // TODO: - Place order screen
     }
 }
