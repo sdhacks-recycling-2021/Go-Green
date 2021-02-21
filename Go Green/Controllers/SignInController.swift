@@ -15,6 +15,7 @@ class SignInController: UIViewController {
     @IBOutlet var driverRecyclerSC: UISegmentedControl!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var signInButton: UIButton!
+    @IBOutlet var signUpButton: UIButton!
     @IBOutlet var logoLabel: UILabel!
     
     // MARK: - Lifecycle
@@ -49,12 +50,14 @@ class SignInController: UIViewController {
             signInButton.setTitleColor(.white, for: .normal)
             signInButton.backgroundColor = .systemGreen
             navigationController?.navigationBar.barTintColor = .white
+            signUpButton.setTitleColor(.systemGreen, for: .normal)
         case 1:
             view.backgroundColor = .systemGreen
             logoLabel.textColor = .white
             signInButton.setTitleColor(.systemGreen, for: .normal)
             signInButton.backgroundColor = .white
             navigationController?.navigationBar.barTintColor = .systemGreen
+            signUpButton.setTitleColor(.white, for: .normal)
         default: print("DEBUG: handleSCToggled default case")
         }
     }
@@ -74,5 +77,9 @@ class SignInController: UIViewController {
             performSegue(withIdentifier: "handleRecyclerSignInTapped", sender: nil)
         default: break
         }
+    }
+    
+    @IBAction func handleSignUpTapped(_ sender: Any) {
+        // TODO: - Present sign up screen
     }
 }

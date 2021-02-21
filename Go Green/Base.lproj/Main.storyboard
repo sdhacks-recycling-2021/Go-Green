@@ -61,6 +61,17 @@
                                 <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgO-WX-rei">
+                                <rect key="frame" x="176.5" y="442.5" width="61" height="35"/>
+                                <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="17"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleSignUpTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eQB-eF-b6g"/>
+                                    <segue destination="8de-FO-JU8" kind="presentation" id="k53-7v-yVy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -69,10 +80,12 @@
                             <constraint firstItem="LVH-qW-ftl" firstAttribute="top" secondItem="9uv-cM-cJH" secondAttribute="bottom" constant="32" id="B5E-lJ-4v6"/>
                             <constraint firstItem="dYf-0M-F3H" firstAttribute="top" secondItem="BzX-78-EBZ" secondAttribute="bottom" constant="20" id="FgK-tc-ORw"/>
                             <constraint firstItem="gvd-Rq-jRV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TZF-Cc-3Uq"/>
+                            <constraint firstItem="BgO-WX-rei" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ty5-4m-l1H"/>
                             <constraint firstItem="BzX-78-EBZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hsI-1v-Zr7"/>
                             <constraint firstItem="LVH-qW-ftl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kfd-zY-0Ey"/>
                             <constraint firstItem="9uv-cM-cJH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rSf-fo-dhg"/>
                             <constraint firstItem="dYf-0M-F3H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sBe-bR-Sk0"/>
+                            <constraint firstItem="BgO-WX-rei" firstAttribute="top" secondItem="dYf-0M-F3H" secondAttribute="bottom" constant="20" id="udh-o3-HKo"/>
                             <constraint firstItem="9uv-cM-cJH" firstAttribute="top" secondItem="gvd-Rq-jRV" secondAttribute="bottom" constant="40" id="vD0-rW-L51"/>
                             <constraint firstItem="gvd-Rq-jRV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="y6X-eM-VNb"/>
                         </constraints>
@@ -84,13 +97,14 @@
                         <outlet property="logoLabel" destination="gvd-Rq-jRV" id="NpN-y0-fNa"/>
                         <outlet property="passwordTextField" destination="BzX-78-EBZ" id="a9e-Wv-BYe"/>
                         <outlet property="signInButton" destination="dYf-0M-F3H" id="W6d-Hk-jXZ"/>
+                        <outlet property="signUpButton" destination="BgO-WX-rei" id="qYV-HM-VZS"/>
                         <segue destination="YqC-AA-kGJ" kind="presentation" identifier="handleRecyclerSignInTapped" id="di8-qQ-MUR"/>
                         <segue destination="hlN-Vm-4B9" kind="presentation" identifier="handleDriverSignInTapped" id="chz-xb-y9x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031.8840579710145" y="118.52678571428571"/>
+            <point key="canvasLocation" x="1942.0289855072465" y="118.52678571428571"/>
         </scene>
         <!--Recycle-->
         <scene sceneID="PVY-3d-mkY">
@@ -120,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKx-Hu-k9X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2660.8695652173915" y="118.52678571428571"/>
+            <point key="canvasLocation" x="3571.0144927536235" y="118.52678571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vCe-pj-IrV">
@@ -138,7 +152,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNl-hU-NNL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750.7246376811595" y="118.52678571428571"/>
+            <point key="canvasLocation" x="2660.8695652173915" y="118.52678571428571"/>
         </scene>
         <!--Driver-->
         <scene sceneID="Uuv-7l-Hbo">
@@ -168,7 +182,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieT-nG-uJh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2660.8695652173915" y="778.79464285714278"/>
+            <point key="canvasLocation" x="2835" y="839"/>
+        </scene>
+        <!--Sign Up-->
+        <scene sceneID="UBH-Hl-fwf">
+            <objects>
+                <viewController id="8de-FO-JU8" customClass="SignUpController" customModule="Go_Green" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WPh-sj-ETk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="II0-J7-lX7">
+                                <rect key="frame" x="20" y="40" width="131" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g4L-aT-AKo">
+                                <rect key="frame" x="157.5" y="177" width="99" height="34"/>
+                                <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oaQ-RN-nEn">
+                                <rect key="frame" x="173.5" y="123" width="67.5" height="34"/>
+                                <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOP-zo-gDS">
+                                <rect key="frame" x="178.5" y="231" width="57" height="33"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="16"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleSignInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vSR-98-FQC"/>
+                                    <action selector="handleSignUpTapped:" destination="8de-FO-JU8" eventType="touchUpInside" id="KkQ-cH-XqG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fnx-Ea-IQ9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oaQ-RN-nEn" firstAttribute="top" secondItem="II0-J7-lX7" secondAttribute="bottom" constant="40" id="1TK-tX-vGa"/>
+                            <constraint firstItem="g4L-aT-AKo" firstAttribute="top" secondItem="oaQ-RN-nEn" secondAttribute="bottom" constant="20" id="Blk-Ps-3YS"/>
+                            <constraint firstItem="g4L-aT-AKo" firstAttribute="centerX" secondItem="WPh-sj-ETk" secondAttribute="centerX" id="GO8-uc-hVQ"/>
+                            <constraint firstItem="cOP-zo-gDS" firstAttribute="top" secondItem="g4L-aT-AKo" secondAttribute="bottom" constant="20" id="Uto-qZ-uyx"/>
+                            <constraint firstItem="oaQ-RN-nEn" firstAttribute="centerX" secondItem="WPh-sj-ETk" secondAttribute="centerX" id="dId-2d-94x"/>
+                            <constraint firstItem="II0-J7-lX7" firstAttribute="leading" secondItem="fnx-Ea-IQ9" secondAttribute="leading" constant="20" id="g0F-FP-Kgl"/>
+                            <constraint firstItem="cOP-zo-gDS" firstAttribute="centerX" secondItem="WPh-sj-ETk" secondAttribute="centerX" id="uV8-rJ-dBG"/>
+                            <constraint firstItem="II0-J7-lX7" firstAttribute="top" secondItem="fnx-Ea-IQ9" secondAttribute="top" constant="40" id="wst-Td-kSA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign Up" id="l6X-WY-wDa"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="oaQ-RN-nEn" id="xd8-cS-LKf"/>
+                        <outlet property="passwordTextField" destination="g4L-aT-AKo" id="XhB-bn-BlV"/>
+                        <outlet property="signUpButton" destination="cOP-zo-gDS" id="atM-Da-Rdr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kn4-qG-Z2P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="839"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CHg-K0-zwN">
@@ -186,7 +261,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAo-AS-F4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750.7246376811595" y="778.79464285714278"/>
+            <point key="canvasLocation" x="1925" y="839"/>
         </scene>
     </scenes>
     <resources>
