@@ -2,6 +2,7 @@ package com.GoGreen.server.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "posts")
@@ -20,12 +21,18 @@ public class Post extends BaseEntity
     private User postingUser;
 
     @Column(name = "date_posted")
-    @NotEmpty
+    @NotNull
     private long datePosted;    //Time will be milis since epoch
 
     @Column(name = "location")
     @NotEmpty
     private String location;
+
+    @Column(name = "num_large_container")
+    private int numLargeContainer;
+
+    @Column (name = "num_small_container")
+    private int numSmallContainer;
 
 //    public Post(@JsonProperty("userID") int userID,
 //                @JsonProperty("location") String location)
@@ -34,6 +41,31 @@ public class Post extends BaseEntity
 //        this.location = location;
 //
 //    }
+
+    public void setPostingUser(User postingUser)
+    {
+        this.postingUser = postingUser;
+    }
+
+    public void setDatePosted(long datePosted)
+    {
+        this.datePosted = datePosted;
+    }
+
+    public void setLocation(String location)
+    {
+        this.location = location;
+    }
+
+    public void setNumLargeContainer(int numLargeContainer)
+    {
+        this.numLargeContainer = numLargeContainer;
+    }
+
+    public void setNumSmallContainer(int numSmallContainer)
+    {
+        this.numSmallContainer = numSmallContainer;
+    }
 
     public User getPostingUser()
     {
@@ -53,5 +85,15 @@ public class Post extends BaseEntity
     public int getPostID()
     {
         return super.getId();
+    }
+
+    public int getNumLargeContainer()
+    {
+        return numLargeContainer;
+    }
+
+    public int getNumSmallContainer()
+    {
+        return numSmallContainer;
     }
 }
