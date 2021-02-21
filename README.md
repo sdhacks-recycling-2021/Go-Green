@@ -9,7 +9,7 @@ We wanted something that encouraged people to do more for the earth and the envi
 # How to run this project
 * This app requires a Mac computer with Xcode installed because the app is not uploaded to Apple servers yet.
 
-1. Clone this repository `git clone https://github.com/sdhacks-recycling-2021/Go-Green.git
+1. Clone this repository `git clone https://github.com/sdhacks-recycling-2021/Go-Green.git`
 2. `cd` into the Go Green directory
 3. Open "Go Green.xcodeproj" or enter `xed .` in your terminal
 4. Click the play button at the top left of Xcode to run your simulator (Choose a device to run the app on)
